@@ -40,8 +40,8 @@
                         <div class="product-name">{{product.nama}}</div>
                         <p>Rp. {{ product.harga }},-</p>
                         <ul>
-                        {% for description in descriptions }
-                            <li>description.description</li>
+                        {% for description in descriptions %}
+                            <li>{{ description.description }}</li>
                         {% endfor %}
                         </ul>
                     </div>                    

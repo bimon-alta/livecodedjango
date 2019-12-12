@@ -7,11 +7,15 @@ from .models import Product,Description
 
 def index(request):
     products = Product.objects.all()
+    for product in products:
+        product.harga = '{:,}'.format(product.harga)
+        
     return render(request,'catalogapp/index.html',{'products':products})
 
 def product_detail(request,product_id):
     product = get_object_or_404(Product,pk=product_id)
-    descriptions = Description.objects(product=product)
+    product.harga = '{:,}'.format(product.harga)
+    descriptions = Description.objects.filter(product=product_id).all()
     ctx =  {
         'product': product,
         'descriptions': descriptions,
