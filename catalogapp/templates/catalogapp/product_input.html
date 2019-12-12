@@ -35,15 +35,15 @@
             {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
             <h4>Insert New Product</h4>
             
-            <form method="post" action="{% url 'catalogapp:insert_product' %}">
+            <form method="post" action="{% url 'catalogapp:save_new_product' %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="product-name">Product Name</label>                         
-                    <input type="text" class="form-control" id="product-name" name="product-name" placeholder="New Blog Title" required>
+                    <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Jet Tempur" required>
                 </div>
                 <div class="form-group">
                         <label for="product-harga">Price</label>                         
-                        <input type="number" class="form-control" id="product-harga" name="product-harga" placeholder="http://www.images.google.com/myimage.jpg" required>                        
+                        <input type="number" class="form-control" id="product-harga" name="product-harga" placeholder="15000000000" required>                        
                     </div> 
                 <div>
                 <div class="form-group">
@@ -57,35 +57,5 @@
         </div>
     </section>
     
-    <footer>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 foot1">
-                    <a>
-                        Our Product:
-                    </a>
-                    <a href="">
-                        <img class="img-f-1" src="{% static 'img/footer/logo-grey-alphapay.png' %}" />
-                    </a>
-                    <a href="">
-                        <img class="img-f-2" src="{% static 'img/footer/logo-grey-sepulsa.png' %}" />
-                    </a>
-                    <a href="">
-                        <img class="img-f-3" src="{% static 'img/footer/logo-grey-alphabill.png' %}" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-7 foot2">
-                    Contact Person: Mobile Phone: 0877 9609 9530. Email: 
-                </div>
-                <div class="col-md-5 foot3">
-                    academy@alphatech.id
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

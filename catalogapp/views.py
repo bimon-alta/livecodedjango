@@ -25,12 +25,15 @@ def product_detail(request,product_id):
 
 
 def insert_product(request):
+    return render(request, 'catalogapp/product_input.html',)
+
+def save_new_product(request):
     if request.POST:
         nama = request.POST['product-name']
         harga = request.POST['product-harga']
         img_url = request.POST['product-img-url']
 
-        proceed = Product(nama=nama,harga=harga, img_url=img_url)
+        proceed = Product(nama=nama, harga=harga, img_url=img_url)
         proceed.save()
 
         return redirect('/')
