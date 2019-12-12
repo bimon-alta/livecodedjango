@@ -135,6 +135,21 @@ body a:hover{
     color: #000000
 }
 
+.area-tombol-input{
+    display: table;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+.product-insert-button{
+    color: white;
+    background: #f12875d0;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin: 0 50px;
+    display: inline-block;
+}
+
 .detail-content-img{
     width: 100%;
     height: 300px;

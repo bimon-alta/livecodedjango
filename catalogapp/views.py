@@ -9,7 +9,7 @@ def index(request):
     products = Product.objects.all()
     for product in products:
         product.harga = '{:,}'.format(product.harga)
-        
+
     return render(request,'catalogapp/index.html',{'products':products})
 
 def product_detail(request,product_id):
@@ -20,8 +20,17 @@ def product_detail(request,product_id):
         'product': product,
         'descriptions': descriptions,
     }
-       
-
     
     return render(request, 'catalogapp/detail.html', ctx)
 
+
+def insert_product(request):
+    if request.POST:
+        nama = request.POST['product-name']
+        harga = request.POST['product-harga']
+        img_url = request.POST['product-img-url']
+
+        proceed = Product(nama=nama,harga=harga, img_url=img_url)
+        proceed.save()
+
+        return redirect('/')

@@ -34,20 +34,23 @@
         </div>
     </header>
     <section>    
-            <div class="container home">
-                <div class="row align-items-center">
-                    {% for product in products %}  
-                    <div class="col-md-3 align-items-center">
-                        <div class="home-img">
-                            <img src="{{ product.img_url }}"/>
-                        </div>
-                        <p class="product_name">{{product.nama}}</p>
-                        <p class="product_price">{{product.harga}}</p>
-                        <a href="{% url 'catalogapp:product_detail' product.id %}">Lihat Detail</a>
+        <div class="area-tombol-input">
+            <a class="product-insert-button" href="/insert_product">New Product</a>
+        </div>
+        <div class="container home">
+            <div class="row align-items-center">
+                {% for product in products %}  
+                <div class="col-md-3 align-items-center">
+                    <div class="home-img">
+                        <img src="{{ product.img_url }}"/>
                     </div>
-                    {% endfor %}  
+                    <p class="product_name">{{product.nama}}</p>
+                    <p class="product_price">{{product.harga}}</p>
+                    <a href="{% url 'catalogapp:product_detail' product.id %}">Lihat Detail</a>
                 </div>
+                {% endfor %}  
             </div>
+        </div>
     </section>    
 </body>
 </html>
